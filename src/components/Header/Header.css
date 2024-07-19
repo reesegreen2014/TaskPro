@@ -5,11 +5,8 @@
   padding: 10px 20px;
   background-color: #282c34;
   color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header h1 {
-  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-buttons {
@@ -18,15 +15,14 @@
 }
 
 .header-button {
-  background-color: #623179;
+  background-color: #603884;
   border: none;
   padding: 10px 15px;
   color: white;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s;
 }
 
 .header-button:hover {
-  background-color: #7b5096;
+  background-color: #a382cd;
 }
