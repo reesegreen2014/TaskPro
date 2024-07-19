@@ -6,7 +6,7 @@ export default function AddTaskForm() {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     taskTitle: "",
-    taskDescription:
+    taskDescription: ""
   })
 
   const onFormDataChange = (event) => {
@@ -54,11 +54,15 @@ export default function AddTaskForm() {
               value={formData.taskDescription}
             >
             </textarea>
-            <span className='form-error-text'>Fill this area with descriptionError handling for Task Title "Task Description Cannot be Empty!"</span>
+            <span className='form-error-text'>
+              Fill this area with descriptionError handling for Task Title "Task Description Cannot be Empty!"
+            </span>
           </div>
           <button type="button"
             onClick={(onSaveTaskClicked)}
-            className="btn btn-default" 
+            className="btn btn-default"
+          >
+            Save Task!</button>
         </form>
       </section>
     </div>
