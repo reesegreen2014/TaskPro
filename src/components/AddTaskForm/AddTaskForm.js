@@ -10,11 +10,28 @@ export default function AddTaskForm() {
   })
 
   const onFormDataChange = (event) => {
-
+    const { name, value } = event.target
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }))
   }
 
   const onSaveTaskClicked = () => {
-
+    if (formData.taskTitle && formData.taskDescription) {
+      dispatch(addTask({
+        id: Date.now().toString(),
+        title: formData.taskTitle,
+        description: formData.taskDescription,
+        status: 'incomplete'
+      }))
+      setFormData({
+        taskTitle: "",
+        taskDescription: ""
+      })
+    } else {
+      // I need to implement error handling here.
+    }
   }
 
   return (
@@ -35,11 +52,12 @@ export default function AddTaskForm() {
               className="form-control"
               value={formData.taskTitle}
             />
+            <br />
             <span className='form-error-text'>
-              Fill this area with titleError handling for Task Title "Task Title Cannot be Empty!"
+              {formData.taskTitle ? "" : "Task Title Cannot be Empty!"}
             </span>
           </div>
-
+          <br />
           <div className='form-element'>
             <label htmlFor='taskDescription' className='form-label'>
               Task Description:
@@ -54,8 +72,9 @@ export default function AddTaskForm() {
               value={formData.taskDescription}
             >
             </textarea>
+            <br />
             <span className='form-error-text'>
-              Fill this area with descriptionError handling for Task Title "Task Description Cannot be Empty!"
+              {formData.taskDescription ? "" : "Task Description Cannot be Empty!"}
             </span>
           </div>
           <button type="button"
