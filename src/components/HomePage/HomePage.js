@@ -1,17 +1,29 @@
 import React from 'react';
 import './HomePage.css';
-import Header from '../Header/Header';
 import MotivationalQuote from '../MotivationalQuote/MotivationalQuote';
+import { useSelector } from 'react-redux';
+import TaskFilter from '../Filter/Filter'
 
-function HomePage() {
+const HomePage = () => {
+const tasks = useSelector(state => state.tasks.tasks)
+const filter = useSelector(state => state.tasks.filter)
+
+// const filteredTasks = tasks.filter(task => {
+//   if (filter === 'all') return true;
+//   return task.status === filter
+// })
+
   return (
     <div className='home-page'>
-      <Header />
       <h1 className='welcome-message'>Welcome to TaskPro!</h1>
       <MotivationalQuote />
+      <TaskFilter />
       <h2 className='your-tasks'><strong>Your Tasks:</strong></h2>
+      <div className='task-cards'>
+        {/* <TaskCard /> */}
+      </div>
     </div>
-  )
+  );
 }
 
 export default HomePage;
