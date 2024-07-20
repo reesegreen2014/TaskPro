@@ -1,0 +1,23 @@
+/* TaskCard.css */
+.task-card {
+    border: 1px solid red;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .task-card.completed {
+    background-color: #e0ffe0; /* Style for completed tasks */
+  }
+  
+  .task-card-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .task-card button,
+  .task-card a {
+    margin-right: 10px; /* Margin for buttons and link */
+  }
+  
