@@ -1,0 +1,7 @@
+.task-detail-page {
+    padding: 20px;
+  }
+  
+  .task-detail-page button {
+    margin-top: 20px; /* Margin for back to home button */
+  }

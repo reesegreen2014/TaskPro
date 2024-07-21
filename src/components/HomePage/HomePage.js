@@ -3,15 +3,16 @@ import './HomePage.css';
 import MotivationalQuote from '../MotivationalQuote/MotivationalQuote';
 import { useSelector } from 'react-redux';
 import TaskFilter from '../Filter/Filter'
+import TaskCard from '../TaskCard/TaskCard'; // Import TaskCard component
 
 const HomePage = () => {
 const tasks = useSelector(state => state.tasks.tasks)
 const filter = useSelector(state => state.tasks.filter)
 
-// const filteredTasks = tasks.filter(task => {
-//   if (filter === 'all') return true;
-//   return task.status === filter
-// })
+const filteredTasks = tasks.filter(task => {
+  if (filter === 'all') return true;
+  return task.status === filter
+})
 
   return (
     <div className='home-page'>
@@ -20,7 +21,9 @@ const filter = useSelector(state => state.tasks.filter)
       <TaskFilter />
       <h2 className='your-tasks'><strong>Your Tasks:</strong></h2>
       <div className='task-cards'>
-        {/* <TaskCard /> */}
+      {filteredTasks.map(task => (
+          <TaskCard key={task.id} task={task} />
+        ))}
       </div>
     </div>
   );
