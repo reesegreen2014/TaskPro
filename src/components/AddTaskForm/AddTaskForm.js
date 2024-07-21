@@ -39,6 +39,7 @@ export default function AddTaskForm() {
         taskPriority: "1" 
       });
       setSubmitted(false); 
+      alert("Task successfully recorded!")
     }
   };
 

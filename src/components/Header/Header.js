@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+  const location = useLocation();
+  const hiddenPaths = ['/about', '/reflections/member1', '/reflections/member2', '/reflections/member3'];
+
   return (
     <header className="header">
+      <Link to="/" className="home-link">
       <h1>TaskPro</h1>
-      <div className="header-buttons">
-        <button className="header-button">About the Project</button>
+      </Link>
+      {!hiddenPaths.includes(location.pathname) && (
+        <div className="header-buttons">
         <Link to="/add" className="header-button">
           Add a Task
         </Link>
-      </div>
+        <Link to="/about" className="header-link header-button">About the Project</Link>
+        </div>
+      )}
     </header>
   );
 };

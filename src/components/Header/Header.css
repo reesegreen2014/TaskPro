@@ -7,6 +7,8 @@
   color: white;
   width: 100%;
   box-sizing: border-box;
+  height: 7em;
+  margin: 0;
 }
 
 .header-buttons {
@@ -14,15 +16,33 @@
   gap: 10px;
 }
 
-.header-button {
+.header h1 {
+  margin: 0;
+  font-size: 2.5em; 
+  color: white; 
+}
+
+.home-link {
+  text-decoration: none; 
+  color: inherit; 
+  display: flex;
+  align-items: center; 
+}
+
+.header-button, .header-link {
   background-color: #603884;
   border: none;
   padding: 10px 15px;
   color: white;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none; 
+  font-size: 1em; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-button:hover {
+.header-button:hover, .header-link:hover {
   background-color: #a382cd;
 }
