@@ -14,6 +14,11 @@
   background-color: #e0ffe0; /* Style for completed tasks */
 }
 
+.task-card-header {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
 .task-card-buttons {
   display: flex;
   gap: 8px;

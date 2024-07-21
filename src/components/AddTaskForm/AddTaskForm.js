@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import './AddTaskForm.css'
-import { addTask } from '../../store/slices/tasksSlice'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import './AddTaskForm.css';
+import { addTask } from '../../store/slices/tasksSlice';
 
 export default function AddTaskForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Use useNavigate to handle navigation
   const [formData, setFormData] = useState({
     taskTitle: "",
-    taskDescription: ""
+    taskDescription: "",
+    taskPriority: "1" // Default to priority 1
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -19,7 +20,7 @@ export default function AddTaskForm() {
       ...prevFormData,
       [name]: value
     }));
-  }
+  };
 
   const onSaveTaskClicked = () => {
     setSubmitted(true); // Set submitted to true when the save button is clicked
@@ -29,19 +30,21 @@ export default function AddTaskForm() {
         id: Date.now().toString(),
         title: formData.taskTitle,
         description: formData.taskDescription,
+        priority: formData.taskPriority, // Add priority to the task
         status: 'incomplete'
       }));
       setFormData({
         taskTitle: "",
-        taskDescription: ""
+        taskDescription: "",
+        taskPriority: "1" // Reset priority to default
       });
       setSubmitted(false); // Reset submitted state after successful save
     }
-  }
+  };
 
   const onReturnToHomeClicked = () => {
     navigate('/'); // Redirect to HomePage
-  }
+  };
 
   return (
     <div>
@@ -86,6 +89,24 @@ export default function AddTaskForm() {
               <span className='form-error-text'>Task Description Cannot be Empty!</span>
             )}
           </div>
+          <br />
+          <div className='form-element'>
+            <label htmlFor='taskPriority' className='form-label'>
+              Priority:
+            </label>
+            <select
+              id="taskPriority"
+              name="taskPriority"
+              className="form-control"
+              onChange={onFormDataChange}
+              value={formData.taskPriority}
+            >
+              <option value="1">Priority 1 (Green - Whenever)</option>
+              <option value="2">Priority 2 (Blue - Start Planning)</option>
+              <option value="3">Priority 3 (Orange - Needs to be done soon)</option>
+              <option value="4">Priority 4 (Red - Must do first)</option>
+            </select>
+          </div>
           <button
             type="button"
             onClick={onSaveTaskClicked}
@@ -103,5 +124,5 @@ export default function AddTaskForm() {
         </form>
       </section>
     </div>
-  )
+  );
 }
