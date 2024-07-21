@@ -8,13 +8,15 @@ const Header = () => {
 
   return (
     <header className="header">
+      <Link to="/" className="home-link">
       <h1>TaskPro</h1>
+      </Link>
       {!hiddenPaths.includes(location.pathname) && (
         <div className="header-buttons">
-          <Link to="/add" className="header-button">
+        <Link to="/add" className="header-button">
           Add a Task
         </Link>
-        <button className="header-button">About the Project</button>
+        <Link to="/about" className="header-link header-button">About the Project</Link>
         </div>
       )}
     </header>

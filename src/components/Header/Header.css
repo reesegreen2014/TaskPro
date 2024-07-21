@@ -7,11 +7,25 @@
   color: white;
   width: 100%;
   box-sizing: border-box;
+  height: 7em;
 }
 
 .header-buttons {
   display: flex;
   gap: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em; 
+  color: white; 
+}
+
+.home-link {
+  text-decoration: none; 
+  color: inherit; 
+  display: flex;
+  align-items: center; 
 }
 
 .header-button, .header-link {
