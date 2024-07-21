@@ -14,15 +14,20 @@
   gap: 10px;
 }
 
-.header-button {
+.header-button, .header-link {
   background-color: #603884;
   border: none;
   padding: 10px 15px;
   color: white;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none; 
+  font-size: 1em; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-button:hover {
+.header-button:hover, .header-link:hover {
   background-color: #a382cd;
 }
