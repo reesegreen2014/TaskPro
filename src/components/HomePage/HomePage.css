@@ -9,8 +9,9 @@
 .welcome-message {
   color: #603884;
   font-size: 2.5em;
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: #F0F0F0;
+  padding: 20px 0 0 0;
+  margin: 0;
 }
 
 .your-tasks {

@@ -8,6 +8,7 @@
   width: 100%;
   box-sizing: border-box;
   height: 7em;
+  margin: 0;
 }
 
 .header-buttons {

@@ -9,6 +9,7 @@ import Member2Reflection from './components/Reflections/Member2Reflections';
 import Member1Reflection from './components/Reflections/Member1Reflections';
 import Member3Reflection from './components/Reflections/Member3Reflections';
 import './App.css';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/reflections/member1" element={<Member1Reflection />} />
           <Route path="/reflections/member2" element={<Member2Reflection />} />
           <Route path="/reflections/member3" element={<Member3Reflection />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
