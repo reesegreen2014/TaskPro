@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import './AboutPage.css';
 import placeholderavatar from '../../images/placeholder-avatar.jpeg';
+import reese from '../../images/Profile Photo.jpeg';
 
 const AboutPage = () => {
   return (
@@ -19,7 +20,7 @@ const AboutPage = () => {
           </div>
           <div className="team-card">
             <Link to="/reflections/member2">
-              <img src={placeholderavatar} alt="Team Member 2" />
+              <img src={reese} alt="Team Member 2" />
             </Link>
             <h2>Reese</h2>
           </div>
