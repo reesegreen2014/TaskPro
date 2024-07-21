@@ -6,11 +6,11 @@ import { addTask } from '../../store/slices/tasksSlice';
 
 export default function AddTaskForm() {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Use useNavigate to handle navigation
+  const navigate = useNavigate(); 
   const [formData, setFormData] = useState({
     taskTitle: "",
     taskDescription: "",
-    taskPriority: "1" // Default to priority 1
+    taskPriority: "1" 
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -23,27 +23,27 @@ export default function AddTaskForm() {
   };
 
   const onSaveTaskClicked = () => {
-    setSubmitted(true); // Set submitted to true when the save button is clicked
+    setSubmitted(true); 
 
     if (formData.taskTitle && formData.taskDescription) {
       dispatch(addTask({
         id: Date.now().toString(),
         title: formData.taskTitle,
         description: formData.taskDescription,
-        priority: formData.taskPriority, // Add priority to the task
+        priority: formData.taskPriority, 
         status: 'incomplete'
       }));
       setFormData({
         taskTitle: "",
         taskDescription: "",
-        taskPriority: "1" // Reset priority to default
+        taskPriority: "1" 
       });
-      setSubmitted(false); // Reset submitted state after successful save
+      setSubmitted(false); 
     }
   };
 
   const onReturnToHomeClicked = () => {
-    navigate('/'); // Redirect to HomePage
+    navigate('/'); 
   };
 
   return (
@@ -101,10 +101,10 @@ export default function AddTaskForm() {
               onChange={onFormDataChange}
               value={formData.taskPriority}
             >
-              <option value="1">Priority 1 (Green - Whenever)</option>
-              <option value="2">Priority 2 (Blue - Start Planning)</option>
-              <option value="3">Priority 3 (Orange - Needs to be done soon)</option>
-              <option value="4">Priority 4 (Red - Must do first)</option>
+              <option value="1">🟢 Priority 1  (Green - Whenever)</option>
+              <option value="2">🔵 Priority 2 (Blue - Start Planning)</option>
+              <option value="3">🟠 Priority 3 (Orange - Complete Soon)</option>
+              <option value="4">🔴 Priority 4 (Red - Do First!)</option>
             </select>
           </div>
           <button

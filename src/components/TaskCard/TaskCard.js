@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import './TaskCard.css';
 
 function TaskCard({ task }) {
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   const handleToggleTask = () => {
-    dispatch(toggleTaskStatus(task.id)); 
+    dispatch(toggleTaskStatus(task.id));
   };
 
   const handleRemoveTask = () => {
-    dispatch(deleteTask(task.id)); 
+    dispatch(deleteTask(task.id));
   };
 
   const getPriorityColorAndDescription = (priority) => {
@@ -35,16 +35,19 @@ function TaskCard({ task }) {
   return (
     <div className={`task-card ${task.status === 'complete' ? 'completed' : ''}`}>
       <div className="task-card-header" style={{ backgroundColor: color }}>
-      <div className="task-priority">Priority Level: {description}</div>
+        <div className="task-priority">Priority Level: {description}</div>
       </div>
       <h3>{task.title}</h3>
       <p>{task.description}</p>
+      <div className="task-status">
+        Status: {task.status === 'complete' ? 'Completed' : 'Incomplete'}
+      </div>
       <div className="task-card-buttons">
         <button onClick={handleToggleTask}>
           {task.status === 'complete' ? 'Mark as Incomplete' : 'Mark as Complete'}
         </button>
         <button onClick={handleRemoveTask}>Remove Task</button>
-        <Link to={`/task/${task.id}`}>View Details</Link>
+        <Link to={`/task/${task.id}`} className="view-details-button">View Details</Link>
       </div>
     </div>
   );
