@@ -2,17 +2,18 @@ import React from 'react';
 import './HomePage.css';
 import MotivationalQuote from '../MotivationalQuote/MotivationalQuote';
 import { useSelector } from 'react-redux';
-import TaskFilter from '../Filter/Filter'
+import TaskFilter from '../Filter/Filter';
 import TaskCard from '../TaskCard/TaskCard'; // Import TaskCard component
 
 const HomePage = () => {
-const tasks = useSelector(state => state.tasks.tasks)
-const filter = useSelector(state => state.tasks.filter)
+  const tasks = useSelector(state => state.tasks.tasks);
+  const filter = useSelector(state => state.tasks.filter);
 
-const filteredTasks = tasks.filter(task => {
-  if (filter === 'all') return true;
-  return task.status === filter
-})
+  const priorityOrder = { '4': 1, '3': 2, '2': 3, '1': 4 };
+
+  const sortedTasks = tasks
+    .filter(task => filter === 'all' || task.status === filter)
+    .sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]);
 
   return (
     <div className='home-page'>
@@ -21,7 +22,7 @@ const filteredTasks = tasks.filter(task => {
       <TaskFilter />
       <h2 className='your-tasks'><strong>Your Tasks:</strong></h2>
       <div className='task-cards'>
-      {filteredTasks.map(task => (
+        {sortedTasks.map(task => (
           <TaskCard key={task.id} task={task} />
         ))}
       </div>
