@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setFilter } from '../../store/slices/tasksSlice'
+import './Filter.css'
 
 function Filter() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function Filter() {
   }
 
   return (
-    <div>
+    <div className='filter'>
       <label htmlFor="filter">Filter Tasks:</label>
       <select id="filter" value={currentFilter} onChange={handleFilterChange}>
           <option value="all">All</option>
