@@ -4,9 +4,7 @@ describe('Task Detail Page', () => {
         statusCode: 200,
         body: { slip: { advice: 'Test Quote' } }
       }).as('getAdvice');
-      
-      cy.intercept('GET', '/api/tasks', { fixture: 'taskCard.json' }).as('getTasks');
-  
+       
       cy.visit('http://localhost:3000/add');
   
       cy.get('input[name="taskTitle"]').type('Sample Task Title');
