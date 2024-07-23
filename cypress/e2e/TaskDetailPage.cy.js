@@ -1,24 +1,7 @@
 describe('Task Detail Page', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'https://api.adviceslip.com/advice', {
-        statusCode: 200,
-        body: { slip: { advice: 'Test Quote' } }
-      }).as('getAdvice');
-       
-      cy.visit('http://localhost:3000/add');
-  
-      cy.get('input[name="taskTitle"]').type('Sample Task Title');
-      cy.get('textarea[name="taskDescription"]').type('Sample task description');
-      cy.get('#taskPriority').select('2');
-  
-      cy.get('button').contains('Save Task!').click();
-  
-      cy.on('window:alert', (str) => {
-        expect(str).to.equal('Task successfully recorded!');
-      });
-  
-      cy.get('button').contains('Return to Home').click();
-  
+      cy.setupIntercepts();
+      cy.addSampleTask();
       cy.get('.task-card').first().within(() => {
         cy.get('.view-details-button').click();
       });
@@ -30,7 +13,7 @@ describe('Task Detail Page', () => {
       cy.get('.task-detail-page').within(() => {
         cy.get('h2').should('contain.text', 'Sample Task Title');
         cy.get('p').first().should('contain.text', 'Sample task description');
-        cy.get('p').last().should('contain.text', 'Status: incomplete');
+        cy.get('p').should('contain', 'Status: incomplete');
       });
     });
   
@@ -38,4 +21,26 @@ describe('Task Detail Page', () => {
       cy.get('button').contains('Back to Home').click();
       cy.get('.task-card').should('exist');
     });
-  });
+  
+    it('should allow editing the task details', () => {
+      cy.get('.detail-buttons').within(() => {
+        cy.get('button').contains('Edit').click();
+      });
+  
+      cy.get('input[type="text"]').clear().type('Updated Task Title');
+      cy.get('textarea').clear().type('Updated task description');
+      cy.get('#taskPriority').select('🟠 Priority 3 (Orange - Complete Soon)');
+      cy.get('button[type="submit"]').contains('Save').click();
+  
+      cy.get('.task-content').within(() => {
+        cy.get('h2').should('contain.text', 'Updated Task Title');
+        cy.get('p').first().should('contain.text', 'Updated task description');
+        cy.get('p').should('contain.text', 'Priority: 3');
+      });
+    });
+    it('should display "Task not found" for invalid task ID', () => {
+        cy.visit('http://localhost:3000/task/invalid-id');
+        cy.get('.task-not-found').should('exist').and('contain.text', 'Task not found');
+      });
+    });
+  

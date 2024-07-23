@@ -1,17 +1,12 @@
 describe('Filter Component - Task Filtering', () => {
     beforeEach(() => {
-      cy.intercept('GET', 'https://api.adviceslip.com/advice', {
-        statusCode: 200,
-        body: { slip: { advice: 'Test quote' } }
-      });
-  
+      cy.setupIntercepts();
       const tasks = [
         { id: 1, taskTitle: 'Completed Task', taskDescription: 'This task is completed.', priority: '1', status: 'complete' },
         { id: 2, taskTitle: 'Incomplete Task', taskDescription: 'This task is incomplete.', priority: '2', status: 'incomplete' }
       ];
-  
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      cy.visit('http://localhost:3000');
+      cy.navigateToHome();
     });
   
     it('should filter tasks by complete status', () => {

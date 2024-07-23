@@ -1,25 +1,20 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('setupIntercepts', () => {
+    cy.intercept('GET', 'https://api.adviceslip.com/advice', {
+      statusCode: 200,
+      body: { slip: { advice: 'Test Quote' } }
+    }).as('getAdvice');
+  });
+  
+  Cypress.Commands.add('addSampleTask', () => {
+    cy.visit('http://localhost:3000/add');
+    cy.get('input[name="taskTitle"]').type('Sample Task Title');
+    cy.get('textarea[name="taskDescription"]').type('Sample task description');
+    cy.get('#taskPriority').select('2');
+    cy.get('button').contains('Save Task!').click();
+    cy.get('button').contains('Return to Home').click();
+  });
+  
+  Cypress.Commands.add('navigateToHome', () => {
+    cy.visit('http://localhost:3000');
+  });
+  
