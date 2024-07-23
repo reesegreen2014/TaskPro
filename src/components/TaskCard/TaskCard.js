@@ -19,13 +19,13 @@ function TaskCard({ task }) {
   const getPriorityColorAndDescription = (priority) => {
     switch (priority) {
       case "1":
-        return { color: "green", description: "Priority 1 (Green - Whenever)" };
+        return { color: "green", description: " 1 (Green - Whenever)" };
       case "2":
-        return { color: "blue", description: "Priority 2 (Blue - Start Planning)" };
+        return { color: "blue", description: " 2 (Blue - Start Planning)" };
       case "3":
-        return { color: "orange", description: "Priority 3 (Orange - Complete Soon)" };
+        return { color: "orange", description: " 3 (Orange - Complete Soon)" };
       case "4":
-        return { color: "red", description: "Priority 4 (Red - Do First!)" };
+        return { color: "red", description: " 4 (Red - Do First!)" };
       default:
         return { color: "black", description: "No Priority" };
     }
