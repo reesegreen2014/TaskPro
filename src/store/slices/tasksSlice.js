@@ -43,17 +43,3 @@ const tasksSlice = createSlice({
 
 export const { addTask, deleteTask, editTask, setFilter, toggleTaskStatus } = tasksSlice.actions;
 export default tasksSlice.reducer;
-
-
-
-//Potentially better for immutability 
-// editTask: (state, action) => {
-//     const { id, title, description } = action.payload;
-//     state.tasks = state.tasks.map(task => {
-//         if (task.id === id) {
-//             return { ...task, title, description };
-//         }
-//         return task;
-//     });
-//     storeInLocalStorage(state.tasks);
-// }

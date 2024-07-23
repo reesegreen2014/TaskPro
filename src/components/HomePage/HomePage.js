@@ -3,7 +3,7 @@ import './HomePage.css';
 import MotivationalQuote from '../MotivationalQuote/MotivationalQuote';
 import { useSelector } from 'react-redux';
 import TaskFilter from '../Filter/Filter';
-import TaskCard from '../TaskCard/TaskCard'; // Import TaskCard component
+import TaskCard from '../TaskCard/TaskCard'; 
 
 const HomePage = () => {
   const tasks = useSelector(state => state.tasks.tasks);
