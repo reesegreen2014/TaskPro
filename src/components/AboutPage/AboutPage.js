@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header';
 import './AboutPage.css';
 import placeholderavatar from '../../images/placeholder-avatar.jpeg';
 import reese from '../../images/Profile Photo.jpeg';

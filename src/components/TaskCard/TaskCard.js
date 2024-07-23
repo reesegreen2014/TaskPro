@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTask, toggleTaskStatus } from '../../store/slices/tasksSlice';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './TaskCard.css';
 
 function TaskCard({ task }) {
@@ -53,4 +54,15 @@ function TaskCard({ task }) {
   );
 }
 
+TaskCard.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    priority: PropTypes.string,
+    status: PropTypes.string
+  }).isRequired
+};
+
 export default TaskCard;
+
