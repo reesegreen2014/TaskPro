@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# TaskPro
+TaskPro is a React application that allows users to manage their tasks efficiently. Users can add, edit, delete, and filter tasks, and view detailed information about each task.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+- Add new tasks with a title, description, and priority level
+- Edit existing tasks
+- Delete tasks
+- Filter tasks by completion status
+- View detailed information about each task
+- Display pieces of advice fetched from an API
+- Responsive design across a variety of devices and screen sizes
 
-## Available Scripts
+## Technologies Used
+- React
+- React Router
+- Redux
+- JavaScript
+- Cypress
+- HTML
+- CSS
+- Fetch API
 
-In the project directory, you can run:
+## Installation Instructions
+To run this project locally, follow these steps:
 
-### `npm start`
+1. **Clone the repository**
+    by running ```git clone https://github.com/reesegreen2014/taskpro```
+2. **Navigate into the project directory**
+   by running ```cd taskpro```
+3. **Install dependencies**
+    by running ```npm install```
+4. **Start the development server**
+    by running ```npm start```
+5. **Enjoy managing your tasks with TaskPro!**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Challenges
+- Integrating Redux for global state management and ensuring state updates propagate correctly throughout the application.
+- Implementing the `edit` functionality for tasks and managing controlled form components.
+- Ensuring responsiveness across all devices and handling various breakpoints throughout the application.
+- Learning and incorporating Cypress (including Cypress commands) for end-to-end testing to ensure robust application functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Wins
+- Seamless API integration for fetching daily pieces of advice.
+- Successfully managed application state using Redux.
+- Implemented comprehensive error handling.
+- Collaboration: this project was enjoyable and productive to work on as a team.
 
-### `npm test`
+## Future Enhancements 
+- Implement user authentication using services like Google Firebase or Auth0.
+- Integrate additional open-source APIs to provide more features and data.
+- Enhance the application's styling to offer an even more user-friendly and visually appealing experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+### **Home Page**
+![Home Page](https://github.com/user-attachments/assets/355dab31-02f7-49b6-a00c-82a8cd399920)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Add Task Form**
+![Add Task Form](https://github.com/user-attachments/assets/4a2610d9-4879-4625-a81f-e8a25292ac74)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Task Details**
+![image](https://github.com/user-attachments/assets/a64d21e7-483d-4f74-8dbe-2d6fe1e2901e)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Responsive Design on Mobile Phone**
+![Application on iPhone browser](https://github.com/user-attachments/assets/82d79527-4b1f-4fcf-9a7a-92cfd628bd56)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+- [Turing](https://turing.edu/) for education.
+- [React.dev](https://react.dev/) for React documentation.
+- [Redux Docs](https://redux.js.org/) for React documentation.
+- [Cypress Docs](https://docs.cypress.io/) for Cypress training and documentation.
+ 
