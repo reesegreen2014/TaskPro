@@ -9,7 +9,7 @@ const Member3Reflection = () => {
     <div className="reflection-page">
       <h1>Kevin's Reflections</h1>
       <div className="reflection-box">
-        <p>When creating this project, we knew we wanted to learn and implement a global state management solution like Redux. Applications are becoming increasingly complex, and certain pages or components often need to manage numerous states. We wanted to gain experience in managing the state of my components centrally, in one place.</p>
+        <p>When creating this project, we knew we wanted to learn and implement a global state management solution like Redux. Applications are becoming increasingly complex, and certain pages or components often need to manage numerous states. We wanted to gain experience in managing the state of our components centrally, in one place.</p>
 
         <p>Using Redux allowed us to create components and dispatch individual actions to our <span style={purpleStyle}><strong>tasksSlice</strong></span> file. The slice file, created using <span style={purpleStyle}><strong>createSlice</strong></span> from <span style={purpleStyle}><strong>@reduxjs/toolkit</strong></span>, defines the actions and reducers that manage our application's state. By organizing the state logic in one central file, we made our code more structured and easier to maintain. This setup enabled us to handle actions like <span style={purpleStyle}><strong>addTask</strong></span> and <span style={purpleStyle}><strong>toggleTaskStatus</strong></span> effectively, with the state updates propagating throughout the application seamlessly.</p>
 
