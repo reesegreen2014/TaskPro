@@ -47,3 +47,10 @@
   gap: 20px;
   padding: 20px;
 }
+
+.no-tasks-message {
+  font-size: 1.2em;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+}
