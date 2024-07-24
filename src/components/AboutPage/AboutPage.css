@@ -39,10 +39,6 @@
   object-fit: cover; 
 }
 
-.team-card img[src*="Kevin - Profile Photo.jpg"] {
-  object-position: 20 20%; /* Adjust the position of Kevin's photo */
-}
-
 .team-card h2 {
   color: #603884;
   font-size: 1.2em;

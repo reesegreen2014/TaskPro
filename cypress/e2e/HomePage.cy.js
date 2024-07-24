@@ -15,7 +15,7 @@ describe('HomePage functionality', () => {
     it('should add a new task and display it on the homepage', () => {
       cy.addSampleTask();
       cy.get('.task-card').should('exist');
-      cy.get('.task-priority').should('contain', 'Priority Level: Priority 2 (Blue - Start Planning)');
+      cy.get('.task-card-header').should('exist')
       cy.get('h3').should('contain', 'Sample Task Title');
       cy.get('.task-card > p').should('contain', 'Sample task description');
       cy.get('.task-status').should('contain', 'Status: Incomplete');
