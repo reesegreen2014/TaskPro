@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTask, toggleTaskStatus } from '../../store/slices/tasksSlice';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './TaskCard.css';
 
 function TaskCard({ task }) {
@@ -18,13 +19,13 @@ function TaskCard({ task }) {
   const getPriorityColorAndDescription = (priority) => {
     switch (priority) {
       case "1":
-        return { color: "green", description: "Priority 1 (Green - Whenever)" };
+        return { color: "green", description: " 1 (Green - Whenever)" };
       case "2":
-        return { color: "blue", description: "Priority 2 (Blue - Start Planning)" };
+        return { color: "blue", description: " 2 (Blue - Start Planning)" };
       case "3":
-        return { color: "orange", description: "Priority 3 (Orange - Complete Soon)" };
+        return { color: "orange", description: " 3 (Orange - Complete Soon)" };
       case "4":
-        return { color: "red", description: "Priority 4 (Red - Do First!)" };
+        return { color: "red", description: " 4 (Red - Do First!)" };
       default:
         return { color: "black", description: "No Priority" };
     }
@@ -53,4 +54,15 @@ function TaskCard({ task }) {
   );
 }
 
+TaskCard.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    priority: PropTypes.string,
+    status: PropTypes.string
+  }).isRequired
+};
+
 export default TaskCard;
+
