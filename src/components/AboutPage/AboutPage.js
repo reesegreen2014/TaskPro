@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header';
 import './AboutPage.css';
 import placeholderavatar from '../../images/placeholder-avatar.jpeg';
 import reese from '../../images/Profile Photo.jpeg';
 import jarvis from '../../images/Profile Photo-J.jpg';
+import kevin from '../../images/Kevin - Profile Photo.jpg'
+
 
 const AboutPage = () => {
   return (
@@ -27,7 +28,7 @@ const AboutPage = () => {
           </div>
           <div className="team-card">
             <Link to="/reflections/member3">
-              <img src={placeholderavatar} alt="Team Member 3" />
+              <img src={kevin} alt="Team Member 3" />
             </Link>
             <h2>Kevin</h2>
           </div>
