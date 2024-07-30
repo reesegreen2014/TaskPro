@@ -67,6 +67,6 @@ To run this project locally, follow these steps:
 ## Acknowledgements
 - [Turing](https://turing.edu/) for education.
 - [React.dev](https://react.dev/) for React documentation.
-- [Redux Docs](https://redux.js.org/) for React documentation.
+- [Redux Docs](https://redux.js.org/) for Redux documentation.
 - [Cypress Docs](https://docs.cypress.io/) for Cypress training and documentation.
  
